@@ -1,11 +1,13 @@
 node {
-    nodejs "NodeJs"
-    sh 'npm --version'
 }
 
 pipeline {
-    agent any
-
+    agent {
+        docker {
+            image '16-alpine'
+            args '-p 3000:3000'
+        }
+    }
     stages {
         stage('build') {
             steps {
