@@ -1,7 +1,5 @@
 node {
-    tools {
-        nodejs "NodeJs"
-    }
+    nodejs "NodeJs"
     sh 'npm --version'
 }
 
