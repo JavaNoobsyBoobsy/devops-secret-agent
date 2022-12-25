@@ -1,7 +1,5 @@
 node {
-    env.NODEJS_HOME = "${nodejs 'NodeJS'}"
-    // on linux / mac
-    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+    nodejs "NodeJS"
     sh 'npm --version'
 }
 
