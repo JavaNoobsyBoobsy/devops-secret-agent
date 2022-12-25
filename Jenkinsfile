@@ -1,13 +1,11 @@
 node {
+    env.NODEJS_HOME = "${tool 'basic_node'}"
+    // on linux / mac
+    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+    sh 'npm --version'
 }
-
 pipeline {
-    agent {
-        docker {
-            image '16-alpine'
-            args '-p 3000:3000'
-        }
-    }
+    agent any 
     stages {
         stage('build') {
             steps {
